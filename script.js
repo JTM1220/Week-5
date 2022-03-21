@@ -1,4 +1,4 @@
-var url = 'https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&appid=15989dacd048f31feba68145cd215103'
+var url = 'https://api.openweathermap.org/data/2.5/onecall?lat=&lon=&appid=15989dacd048f31feba68145cd215103'
 var locate = 'http://api.openweathermap.org/geo/1.0/direct?q=Dallas&appid=15989dacd048f31feba68145cd215103'
 var button = document.querySelector(".btn");
 var inputValue = document.querySelector('.cName');
@@ -11,15 +11,10 @@ var uv = document.querySelector('.uv');
 button.addEventListener('click', function(){
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=15989dacd048f31feba68145cd215103')
     .then(Response => Response.json())
-    .then(data => console.log(data))
-    function getWeather(){
-    fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+coord.lat+'&lon='+coord.lon+'&appid=15989dacd048f31feba68145cd215103')
-    .then(Response => Response.json())
-    .then(data => console.log(data))
-}
+    .then(data => console.log(data.coord))
+    console.log('I strained my brain for hours reached out to BCS and was still unable to figure how to link the coords to the 2nd api and to make the call');
 });
 
-cityName.innerHTML = inputValue.value;
 
 
 
